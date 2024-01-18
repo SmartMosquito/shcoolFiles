@@ -1,0 +1,27 @@
+<html>
+<head><title>Triangle</title></head>
+<body><font color="green" size=5>Calculate area of a triangle</font>
+<script type="text/javascript"> function Area() {
+	var a=parseInt(document.myform.Side1.value);
+	var b=parseInt(document.myform.Side2.value);
+	var c=parseInt(document.myform.Side3.value);
+	if (((a+b)>c)&&((a+c)>b)&&((b+c)>a)) {
+		var p=(a+b+c)/2;
+		var s=Math.sqrt(p*(p-a)*(p-b)*(p-c));
+		document.myform.Answer.value=s;
+	} else {
+		document.myform.Answer.value="This triangle isn't exist";
+	}
+}
+</script>
+<form name="myform">
+	<b><font color="0000ff">Enter side's lenght of the triangle:
+	<p> Lenght of side A: <input type="number" size="20" name="Side1">
+	<p> Lenght of side B: <input type="number" size="20" name="Side2">
+	<p> Lenght of side C: <input type="number" size="20" name="Side3">
+	<p><input type="button" value="Calculate" onclick="Area()">
+		<input type="reset" value="Reset">
+	<p>Area of the Triangle: <input type="text" size="50" name="Answer">
+</form>
+</body>
+</html>
